@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <header>
+        <nav>
+          <% if user_signed_in? %>
+            <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
+
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path %>
+            <%= link_to "Sign up", new_user_registration_path %>
+          <% end %>
+          <%= link_to "Posts", posts_path %>
+        </nav>
+      </header>
     <%= yield %>
   </body>
 </html>

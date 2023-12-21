@@ -65,3 +65,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'devise', '~> 4.9', '>= 4.9.3'
+gem 'mysql2', '~> 0.5.5'
+gem 'dotenv', '~> 2.8', '>= 2.8.1'
+gem 'stripe'
