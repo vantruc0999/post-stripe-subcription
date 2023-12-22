@@ -12,15 +12,19 @@
 
   <body>
     <header>
+        <p style="color: green"><%= notice %></p>
+        <p style="color: red"><%= alert %></p>
         <nav>
           <% if user_signed_in? %>
+            <%= link_to current_user.email, edit_user_registration_path %>
+            <%= link_to current_user.stripe_customer_id %>
             <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
-
           <% else %>
             <%= link_to "Sign in", new_user_session_path %>
             <%= link_to "Sign up", new_user_registration_path %>
           <% end %>
           <%= link_to "Posts", posts_path %>
+          <%= link_to "Pricing", pricing_path %>
         </nav>
       </header>
     <%= yield %>
